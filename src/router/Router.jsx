@@ -17,11 +17,11 @@ export const router = createBrowserRouter([
         element:<Root/>,
         errorElement:<ErrorPage/>,
         children:[
-            {path:'/',element:<Home></Home>, loader:()=>fetch('http://localhost:5000/craft')},
+            {path:'/',element:<Home></Home>, loader:()=>fetch('https://craftopia-server-psi.vercel.app/craft')},
 
             {path:'/allitem',
             element:<AllACItem></AllACItem>, 
-            loader:()=>fetch('http://localhost:5000/craft')},
+            loader:()=>fetch('https://craftopia-server-psi.vercel.app/craft')},
 
             {path:'/craft/:id', element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>,},
             {path:'/addcard',element:<PrivateRoute><AddCard></AddCard></PrivateRoute>},

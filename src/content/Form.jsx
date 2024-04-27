@@ -23,7 +23,7 @@ function Form() {
     const user_email = user.email
     const craft = {iname, price, subcategory_Name, description, image, ptime , rating, customize , stock, user_name, user_email}
 
-    fetch('http://localhost:5000/craft', {
+    fetch('https://craftopia-server-psi.vercel.app/craft', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify(craft)

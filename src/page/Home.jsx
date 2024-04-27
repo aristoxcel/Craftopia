@@ -16,7 +16,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/cat');
+        const response = await fetch('https://craftopia-server-psi.vercel.app/cat');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
