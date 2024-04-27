@@ -40,7 +40,7 @@ function Card({craft}) {
           <p className="font-poppins text-violet-900 font-semibold text-xl ">Price: {price}$US</p>
           {/* <button className="px-3 font-poppins  bg-[#2596BE] hover:bg-gradient-to-r hover:from-[#2596be] hover:to-[#62b4d2] hover:ring-2 hover:ring-offset-2 hover:ring-[#62b4d2] transition-all ease-out duration-300 font-semibold text-xl text-white rounded"><Link to={`/details/${id}`} state={title}>View Property</Link></button> */}
      
-          <button className="group relative flex w-36 items-center rounded-lg border-2 border-violet-900 p-3 light:text-violet-800 dark:text-sky-200 font-medium"><Link to={`/card/${_id}`}>View Details</Link></button>
+          <button className="group relative flex w-36 items-center rounded-lg border-2 border-violet-900 p-3 light:text-violet-800 dark:text-sky-200 font-medium"><Link to={`/craft/${_id}`}>View Details</Link></button>
           {/* <button><Link to={`/card/${_id}`}>view</Link></button> */}
           </div>
         </div>

@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
             element:<AllACItem></AllACItem>, 
             loader:()=>fetch('http://localhost:5000/craft')},
 
-            {path:'/card/:id', element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>, loader:({params})=>fetch(`http://localhost:5000/craft/${params._id}`)},
+            {path:'/craft/:id', element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>,},
             {path:'/addcard',element:<PrivateRoute><AddCard></AddCard></PrivateRoute>},
             {path:'/mylist',element:<PrivateRoute><MyACList></MyACList></PrivateRoute>},
             {path:'/login',element:<Login></Login>},
