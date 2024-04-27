@@ -8,12 +8,14 @@ import MyACList from "../page/MyACList";
 import Login from "../page/Login";
 import SignUp from "../page/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../page/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
         path:'/',
         element:<Root/>,
+        errorElement:<ErrorPage/>,
         children:[
             {path:'/',element:<Home></Home>, loader:()=>fetch('http://localhost:5000/craft')},
 
@@ -21,7 +23,7 @@ export const router = createBrowserRouter([
             element:<AllACItem></AllACItem>, 
             loader:()=>fetch('http://localhost:5000/craft')},
 
-            {path:'/card',element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>},
+            {path:'/card/:id', element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>, loader:({params})=>fetch(`http://localhost:5000/craft/${params._id}`)},
             {path:'/addcard',element:<PrivateRoute><AddCard></AddCard></PrivateRoute>},
             {path:'/mylist',element:<PrivateRoute><MyACList></MyACList></PrivateRoute>},
             {path:'/login',element:<Login></Login>},
