@@ -135,9 +135,9 @@ function SignUp() {
         
         <p className="mb-3 text-center text-violet-600">Already have an account?<Link to={'/login'} onClick={() => {setRegisters(!registers);}} className="underline font-semibold">Login</Link></p>
         <hr />
-        <button type="button" className="text-violet-600 py-2 px-5 mb-4 mt-4 mx-auto block shadow-lg border rounded-md border-black" onClick={handleSignInGoogle}><FcGoogle className="w-6 inline-block mr-3 text-3xl"/>Continue with Google</button>
+        {/* <button type="button" className="text-violet-600 py-2 px-5 mb-4 mt-4 mx-auto block shadow-lg border rounded-md border-black" onClick={handleSignInGoogle}><FcGoogle className="w-6 inline-block mr-3 text-3xl"/>Continue with Google</button>
 
-        <button type="button" className="text-violet-600 py-2 px-5 mb-2  mx-auto block shadow-lg border rounded-md border-black"><RxGithubLogo className="w-6 inline-block mr-3 text-3xl"/>Continue with GitHub</button>
+        <button type="button" className="text-violet-600 py-2 px-5 mb-2  mx-auto block shadow-lg border rounded-md border-black"><RxGithubLogo className="w-6 inline-block mr-3 text-3xl"/>Continue with GitHub</button> */}
     </form>
     {/* img */}
     <div className={`hidden lg:block absolute w-1/2 h-full top-0 z-50 duration-500 overflow-hidden bg-black/20 ${registers ? 'translate-x-full rounded-bl-full duration-500' : 'rounded-br-full'}`}>
