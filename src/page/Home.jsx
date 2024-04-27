@@ -5,9 +5,31 @@ import Card from "../content/Card";
 import ClintsComment from "../content/ClientsComment";
 import Typewriter from 'typewriter-effect';
 import Contact from "../content/Contact";
+import { useEffect, useState } from "react";
+import CatCard from "../content/CatCard";
 
 function Home() {
   const crafts = useLoaderData()
+  // const [catData, setCatData]=useState() 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/cat');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const catdata = await response.json();
+        // setCatData(data);
+        console.log(catdata);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchData(); // Call the async function to fetch data
+  
+  }, []);
 
   return (
     <div>
@@ -25,8 +47,10 @@ function Home() {
      </div>
    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-4/5 mx-auto  mt-14 px-3">
    {/* {
-     estate.map(property=><CardEstate key={property.id} property={property}/>)
-   } */}
+     catData.map(cat=><CatCard key={cat._id} cat={cat}/>)
+  } */}
+ <h1></h1>
+
    </div>
 
 
