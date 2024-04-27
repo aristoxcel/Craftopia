@@ -61,6 +61,7 @@ useEffect(()=>{
 // logout user
 const logout=() =>{
   setLoading(true)
+  console.log('hit')
 return signOut(auth)
 }
 
