@@ -4,6 +4,7 @@ import Marquee from "react-fast-marquee";
 import Card from "../content/Card";
 import ClintsComment from "../content/ClientsComment";
 import Typewriter from 'typewriter-effect';
+import Contact from "../content/Contact";
 
 function Home() {
   const crafts = useLoaderData()
@@ -61,6 +62,7 @@ function Home() {
    </div>
    </div>
    <ClintsComment/>
+   <Contact/>
    <Marquee>
     <img src={"https://i.ibb.co/dQbmfmw/download.jpg"} alt="" className="w-28 mr-24  rounded-2xl"/>
     <img src={"https://i.ibb.co/xz6N8KR/download.png"} alt="" className="w-28 mr-24 rounded-2xl"/>
@@ -69,6 +71,7 @@ function Home() {
     <img src={"https://i.ibb.co/jMj2Ssv/images.png"} alt=""className="w-28 rounded-2xl" />
   </Marquee>
    </div>
+   
   )
 }
 

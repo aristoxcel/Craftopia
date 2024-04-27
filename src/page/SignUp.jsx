@@ -65,7 +65,7 @@ function SignUp() {
   }
   console.log(errors);
   return (
-    <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl">
+    <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl my-4">
     {/* register form  */}
    
     <form className={`p-8 w-full ${registers ? 'lg:translate-x-0' : 'lg:-translate-x-full hidden lg:block'} duration-500`} onSubmit={handleSubmit(signUpData)}>
