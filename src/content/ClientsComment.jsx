@@ -1,6 +1,6 @@
 function ClintsComment() {
     return (
-      <div className="lg:w-4/5 mx-auto my-20 px-5">
+      <div className="lg:w-4/5 mx-auto my-24 px-5">
         <div className="grid lg:grid-cols-5 md:grid-cols-1 gap-4">
           <div className="col-span-2  h-72 space-y-3 py-10 my-auto " data-aos="fade-left"
       data-aos-easing="ease-in-sine"
