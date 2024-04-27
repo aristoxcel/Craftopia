@@ -1,20 +1,21 @@
 import { createContext, useEffect, useState, } from "react"
 import PropTypes from 'prop-types'
 import auth from "../Firebase.config"
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth"
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth"
 import { signOut } from "firebase/auth/cordova";
 
 
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 function Context({children}) {
     const [user, setUser] = useState(null)
-    // const [loading, setLoading]=useState(true)
+    const [loading, setLoading]=useState(true)
 
     // sign up by email
     const signUp =(email, password)=>{
-        // setLoading(true)
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
       }
 
@@ -29,21 +30,29 @@ const updateUser=(name, image) =>{
 
       //  sign in by email
       const signIn =(email, password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
       }
 
       // Sign in with google
 const signInWithGoogle=()=>{
-  // setLoading(true)
+  setLoading(true)
   return signInWithPopup(auth, googleProvider)
 }
 
+
+
+// Sign in with Github
+const signInWithGithub=()=>{
+  setLoading(true)
+  return signInWithPopup(auth, githubProvider)
+}
 
 // user info capture by onAuthStateChange
 useEffect(()=>{
   const unsubscribe = onAuthStateChanged(auth, (curUser)=>{
     setUser(curUser)
-    // setLoading(false)
+    setLoading(false)
     console.log(curUser);
   });
   return ()=>unsubscribe()
@@ -51,7 +60,7 @@ useEffect(()=>{
 
 // logout user
 const logout=() =>{
-  // setLoading(true)
+  setLoading(true)
 return signOut(auth)
 }
 
@@ -63,8 +72,9 @@ return signOut(auth)
       signIn,
       updateUser,
       signInWithGoogle,
+      signInWithGithub,
       logout,
-      // loading,
+      loading
     }
 
   return (

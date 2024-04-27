@@ -5,12 +5,13 @@ import Card from "../content/Card";
 import ClintsComment from "../content/ClientsComment";
 import Typewriter from 'typewriter-effect';
 import Contact from "../content/Contact";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import CatCard from "../content/CatCard";
+
 
 function Home() {
   const crafts = useLoaderData()
-  // const [catData, setCatData]=useState() 
+  const [catData, setCatData]=useState() 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +21,7 @@ function Home() {
           throw new Error('Failed to fetch data');
         }
         const catdata = await response.json();
-        // setCatData(data);
+        setCatData(catdata);
         console.log(catdata);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -46,9 +47,9 @@ function Home() {
     data-aos-delay="100">Welcome – you’re in the perfect place for all your art and craft inspiration. We want to help you express your personality, have more fun and learn through creativity. With stacks of new ideas, hints and tips, blogs, tutorials, news and free events, we’re everything art and craft!.</h1>
      </div>
    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-4/5 mx-auto  mt-14 px-3">
-   {/* {
-     catData.map(cat=><CatCard key={cat._id} cat={cat}/>)
-  } */}
+   {
+     catData?.map(cat=><CatCard key={cat._id} cat={cat}/>)
+  } 
  <h1></h1>
 
    </div>

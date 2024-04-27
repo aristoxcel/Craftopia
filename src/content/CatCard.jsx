@@ -12,15 +12,14 @@ function CatCard({cat}) {
         <figure className="relative" data-aos="zoom-out"
      data-aos-easing="ease-in-sine"
      data-aos-duration="300">
-            <button className="rounded px-3 font-poppins bg-violet-600 border-none text-base-300 font-bold text-xl p-[-1px] absolute right-8 top-6">{stock}</button>
           <img className="w-full object-fill h-96 overflow-hidden"
             src={image}
             alt="craft"
           />
 
         </figure>
-        <div className="card-body p-4 pb-6">
-        <h1>{subcategory_Name}</h1>
+        <div className="card-body p-6 bg-teal-700">
+        <h1 className='text-center font-cursive font-semibold text-violet-900 text-2xl'>{subcategory_Name}</h1>
         </div>
       </div>
     </div>

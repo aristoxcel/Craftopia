@@ -7,8 +7,8 @@ function Card({craft}) {
     const {image, iname, subcategory_Name, stock, price, rating}=craft
     const [userRating, setUserRating] = useState(rating);
   return (
-    <div className="mx-auto w-full overflow-hidden flex" id="card">
-      <div className="card  bg-base-100 shadow-xl flex-grow">
+    <div className="mx-auto w-full overflow-hidden flex shadow-md hover:shadow-2xl border rounded-2xl" id="card">
+      <div className="card  bg-base-100 shadow-xl flex-grow ">
         <figure className="relative" data-aos="zoom-out"
      data-aos-easing="ease-in-sine"
      data-aos-duration="300">
@@ -19,7 +19,7 @@ function Card({craft}) {
           />
           {/* <div className="absolute text-xl text-white font-semibold flex gap-2  left-5 bottom-4" > <h2></h2></div> */}
         </figure>
-        <div className="card-body p-4 pb-6">
+        <div className="card-body p-4 pb-6 ">
           <div className="space-y-1">
           <h2 className="card-title font-poppins text-violet-900" data-aos="fade-left"
      data-aos-anchor="#example-anchor"
