@@ -7,6 +7,7 @@ import AddCard from "../page/AddCard";
 import MyACList from "../page/MyACList";
 import Login from "../page/Login";
 import SignUp from "../page/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -20,9 +21,9 @@ export const router = createBrowserRouter([
             element:<AllACItem></AllACItem>, 
             loader:()=>fetch('http://localhost:5000/craft')},
 
-            {path:'/card',element:<DetailCard></DetailCard>},
-            {path:'/addcard',element:<AddCard></AddCard>},
-            {path:'/mylist',element:<MyACList></MyACList>},
+            {path:'/card',element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>},
+            {path:'/addcard',element:<PrivateRoute><AddCard></AddCard></PrivateRoute>},
+            {path:'/mylist',element:<PrivateRoute><MyACList></MyACList></PrivateRoute>},
             {path:'/login',element:<Login></Login>},
             {path:'/signup',element:<SignUp></SignUp>},
         ]
