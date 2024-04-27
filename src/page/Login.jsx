@@ -18,7 +18,7 @@ const location = useLocation()
 const from = location?.state || '/';
 
 
-const { signIn, signInWithGoogle}= useContext(AuthContext);
+const { signIn, signInWithGoogle, signInWithGithub}= useContext(AuthContext);
 
 
 const {
@@ -67,6 +67,22 @@ const {
         })
         .catch(error=>console.log(error.message))
       }
+
+              // Github Sign function
+              const handleSignInGithub=()=>{
+                signInWithGithub()
+                .then(()=>{
+                  setSuccess('you logged in successfully')
+                  Swal.fire({
+                    icon: "success",
+                    title: "you logged in successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate(from)
+                })
+                .catch(error=>console.log(error.message))
+              }
 
 
 return (
@@ -123,7 +139,7 @@ return (
                     <p className="mb-3 text-center text-violet-600">Don&apos;t have an account?<Link to={'/signup'} onClick={() => {setRegisters(!registers);}} className="underline font-semibold text-base-600">Register</Link></p>
                     <hr />
                     <button type="button" className="text-violet-600 py-2 px-5 mb-4 mt-4 mx-auto block shadow-lg border rounded-md border-black" onClick={handleSignInGoogle}><FcGoogle className="w-6 inline-block mr-3 text-3xl text-violet-600"/>Continue with Google</button>
-                    <button type="button" className="text-violet-600 py-2 px-5 mb-4  mx-auto block shadow-lg border rounded-md border-black"><RxGithubLogo className="w-6 inline-block mr-3 text-3xl text-violet-600"/>Continue with GitHub</button>
+                    <button type="button" className="text-violet-600 py-2 px-5 mb-4  mx-auto block shadow-lg border rounded-md border-black" onClick={handleSignInGithub}><RxGithubLogo className="w-6 inline-block mr-3 text-3xl text-violet-600"/>Continue with GitHub</button>
                 </form>
             </div>
 );
