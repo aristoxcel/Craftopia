@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/Context";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
  const {user}=useContext(AuthContext)
+ const navigate = useNavigate();
 
   const handleSubmitForm=(e)=>{
     e.preventDefault();
@@ -29,25 +31,26 @@ function Form() {
     .then(res=>res.json())
     .then(data=>{
       if (data.insertedId){
+        
         Swal.fire({
-          position: "top-end",
           icon: "success",
           title: "Your work has been saved",
           showConfirmButton: false,
           timer: 1500
         });
-      }
+        navigate('/mylist')
+      } 
     })
 
   }
 
 
   return (
-    <div className="border-2 border-green-600 mx-auto">
-      <div className="w-4/5 flex md:flex-row flex-col justify-between gap-5 border-2 border-red-600 mx-auto">
-        <div className="md:basis-1/3">
-          <h1 className="text-2xl font-franklin font-bold text-sky-900 ">Instructions for Add Data</h1>
-          <ul className="text-base text-base-300 font-poppins">
+    <div className="mx-auto my-16">
+      <div className="w-4/5 flex md:flex-row flex-col justify-between gap-5 mx-auto">
+        <div className="md:basis-1/3 px-5">
+          <h1 className="text-2xl font-franklin font-bold text-sky-900 text-center mb-6 ">Instructions for Add Data</h1>
+          <ul className="text-base text-base-600 font-poppins">
             <li>Clear and User-Friendly Interface: Design the add form with a clear and intuitive layout. Use easy-to-understand labels and instructions to guide users through the process.</li>
             <li>Required Fields: Determine which fields are essential for users to fill out and mark them as required. These might include fields such as Title, Description, Category, and Image.</li>
             <li>Title: Ask users to provide a title for their submission. This could be the name of the subcategory or a brief description.</li>
@@ -58,7 +61,7 @@ function Form() {
         </div>
 
         <div className="md:basis-3/5 mx-auto text-center">
-          <h1>Create a Art & Craft Item</h1>
+          <h1 className="text-2xl font-franklin font-bold text-sky-900 text-center mb-2">Create a Art & Craft Item</h1>
           <form className="py-8" onSubmit={handleSubmitForm}>
             {/* Name and price */}
             <div className="flex gap-3  p-3 justify-between">
