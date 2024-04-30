@@ -23,9 +23,14 @@ export const router = createBrowserRouter([
             element:<AllACItem></AllACItem>, 
             loader:()=>fetch('https://craftopia-server-psi.vercel.app/craft')},
 
-            {path:'/craft/:id', element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>,},
+            {path:'/craft/:id',
+             element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>,
+            loader:({params})=>fetch(`https://craftopia-server-psi.vercel.app/craft/${params.id}`)},
+            {path:'/allitem/craft/:id',
+             element:<PrivateRoute><DetailCard></DetailCard></PrivateRoute>,
+            loader:({params})=>fetch(`https://craftopia-server-psi.vercel.app/allitem/craft/${params.id}`)},
             {path:'/addcard',element:<PrivateRoute><AddCard></AddCard></PrivateRoute>},
-            {path:'/mylist',element:<PrivateRoute><MyACList></MyACList></PrivateRoute>},
+            {path:'/mylist',element:<PrivateRoute><MyACList></MyACList></PrivateRoute>, loader:()=>fetch('https://craftopia-server-psi.vercel.app/craft')},
             {path:'/login',element:<Login></Login>},
             {path:'/signup',element:<SignUp></SignUp>},
         ]

@@ -73,7 +73,7 @@ function Home() {
       loop: true,
     }}
   /></h1>
-    <button className="group relative ml-5 flex w-36 items-center rounded-lg border-2 border-violet-900 p-3 light:text-violet-800 dark:text-sky-200 font-medium"><span><Link to={'/allitem'} className="text-base-200">View All</Link></span><span className="absolute right-3 box-content flex w-1/6 justify-center rounded-md bg-violet-400 duration-300 group-hover:w-5/6"><svg viewBox="0 0 24 24" fill="none" className="w-10" xmlns="http://www.w3.org/2000/svg"><g strokeWidth="0"></g><g strokeLinecap="round" strokeLinejoin="round"></g><g><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></g></svg></span></button>
+    <Link to={'/allitem'} className="text-base-200"><button className="group relative ml-5 flex w-36 items-center rounded-lg border-2 border-violet-900 p-3 light:text-violet-800 dark:text-sky-200 font-medium"><span>View Al</span><span className="absolute right-3 box-content flex w-1/6 justify-center rounded-md bg-violet-400 duration-300 group-hover:w-5/6"><svg viewBox="0 0 24 24" fill="none" className="w-10" xmlns="http://www.w3.org/2000/svg"><g strokeWidth="0"></g><g strokeLinecap="round" strokeLinejoin="round"></g><g><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></g></svg></span></button></Link>
     </div>
 
     <div className="md:col-span-5 col-span-6 gap-3 ">
